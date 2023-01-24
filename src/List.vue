@@ -29,8 +29,12 @@ ul {
     gap: 30px;
 }
 li {
- color: rgb(0, 255, 0);
+ color: crimson;
  font-size: larger;
+ border: 1px cyan;
+ border-radius: 10%;
+padding: 10px;
+background-color: yellow;
 }
 
 </style>
