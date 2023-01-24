@@ -1,0 +1,36 @@
+<template>
+
+<div class="div1">
+    <ul>
+        <li v-for="item in menuList" :key="item.index" >{{item}}</li>
+    </ul>
+</div>
+
+
+</template>
+
+<script>
+
+export default{
+    data(){
+        return{
+            menuList: ['Home', 'Products', 'About Us', 'Contact']
+        }
+    },
+}
+
+
+</script>
+
+<style scoped>
+
+ul {
+    display: flex;
+    gap: 30px;
+}
+li {
+ color: rgb(0, 255, 0);
+ font-size: larger;
+}
+
+</style>
