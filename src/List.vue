@@ -24,6 +24,11 @@ export default{
 
 <style scoped>
 
+div {
+    border: blueviolet 1px solid;
+    background-color: blueviolet;
+}
+
 ul {
     display: flex;
     gap: 30px;
@@ -33,8 +38,12 @@ li {
  font-size: larger;
  border: 1px cyan;
  border-radius: 10%;
-padding: 10px;
-background-color: yellow;
+ padding: 10px;
+ background-color: yellow;
+ list-style: none;
+}
+li:hover{
+    color: cyan;
 }
 
 </style>
