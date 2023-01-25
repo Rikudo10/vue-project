@@ -2,7 +2,7 @@
 
 <div class="div1">
     <ul>
-            <li v-for="item in aLink" :key="item.id">  <a :href="item.url"> {{ item.title }} </a> </li>
+            <li v-for="item in aLink" :key="item.id">  <a :href="item.url" @click.prevent="EventHandler"> {{ item.title }} </a> </li>
     </ul>
 </div>
 
@@ -18,26 +18,31 @@ export default{
             {
                 id: 1,
                 title: 'home',
-                url: "www.youtube.com"
+                url: "https://www.google.com/"
                 },
                 {
                 id: 2,
                 title: 'contact',
-                url: "www.youtube.com"
+                url: "https://www.google.com/"
                 },
                 {
                 id: 1,
                 title: 'abous us',
-                url: "www.youtube.com"
+                url: "https://www.google.com/"
                 },
                 {
                 id: 1,
                 title: 'Exit',
-                url: "www.youtube.com"
+                url: "https://www.google.com/"
                 },
                 
             ]
         }
+    },
+    methods: {
+       EventHandler: function(e){
+            console.log(e.target.innerHTML, e.target.getAttribute('href'))
+        },
     },
 }
 
