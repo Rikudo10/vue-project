@@ -1,76 +1,64 @@
-<template>
-
-<div class="div1">
-    <ul>
-            <li v-for="item in aLink" :key="item.id">  <a :href="item.url" @click.prevent="EventHandler"> {{ item.title }} </a> </li>
-    </ul>
-</div>
-
-
-</template>
-
 <script>
-
 export default{
+    props:{items: Array,},
     data(){
-        return{
-            aLink: [
-            {
-                id: 1,
-                title: 'home',
-                url: "https://www.google.com/"
-                },
-                {
-                id: 2,
-                title: 'contact',
-                url: "https://www.google.com/"
-                },
-                {
-                id: 1,
-                title: 'abous us',
-                url: "https://www.google.com/"
-                },
-                {
-                id: 1,
-                title: 'Exit',
-                url: "https://www.google.com/"
-                },
-                
-            ]
+        return {
+            isHidden : true,
         }
-    },
-    methods: {
-       EventHandler: function(e){
-            console.log(e.target.innerHTML, e.target.getAttribute('href'))
-        },
-    },
+    }
 }
-
-
 </script>
 
+<template>
+    <div class="nav">
+        <ul>
+            <li v-for="item in items" :key="item.id" >
+                <button @click="isHidden = !isHidden">{{item.name}}</button>
+
+            </li>
+        </ul>
+    </div>
+    
+    <div id="app">
+  
+  <p v-if="!isHidden" v-for="item in items" :key="item.index">{{item.description}}</p>
+  
+    </div>
+</template>
+
 <style scoped>
-
-div {
-    border: blueviolet 1px solid;
-    background-color: blueviolet;
-}
-
-ul {
+.nav{
+    background-color: cyan;
+    color: midnightblue;
     display: flex;
-    gap: 30px;
-}
-li {
- color: crimson;
- font-size: larger;
- border: 1px cyan;
- border-radius: 10%;
- padding: 10px;
- background-color: yellow;
- list-style: none;
-}
-li:hover{
-    color: cyan;
+    align-items: center;
+    gap: 2rem;
+    padding: 0.5rem 1rem;
 }
 
+.nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav li{
+    padding: 0.5rem;
+    border-radius: 20px;
+    font-weight: 450;
+    font-size: 25px;
+    transition: all 0.35s;
+}
+
+.nav a{
+    color: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 0.25rem;
+}
 </style>
