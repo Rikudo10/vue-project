@@ -2,7 +2,7 @@
 
 <div class="div1">
     <ul>
-        <li v-for="item in menuList" :key="item.index" >{{item}}</li>
+            <li v-for="item in aLink" :key="item.id">  <a :href="item.url"> {{ item.title }} </a> </li>
     </ul>
 </div>
 
@@ -14,7 +14,29 @@
 export default{
     data(){
         return{
-            menuList: ['Home', 'Products', 'About Us', 'Contact']
+            aLink: [
+            {
+                id: 1,
+                title: 'home',
+                url: "www.youtube.com"
+                },
+                {
+                id: 2,
+                title: 'contact',
+                url: "www.youtube.com"
+                },
+                {
+                id: 1,
+                title: 'abous us',
+                url: "www.youtube.com"
+                },
+                {
+                id: 1,
+                title: 'Exit',
+                url: "www.youtube.com"
+                },
+                
+            ]
         }
     },
 }
