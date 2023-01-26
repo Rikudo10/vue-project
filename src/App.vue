@@ -42,8 +42,14 @@ export default {
     <p v-if="show">ფართობი: {{ calculateSpace }}</p>
     <p v-if="show">მოცულობა: {{ calculateMoculoba }}</p>
   </div>
+  
+  <label for="head">Background Color Change
+        <input type="color" id="head" name="head" v-model="BackgroundColor"
+            :style="{ backgroundColor: BackgroundColor, borderColor: BackgroundColor }">
+    </label>
 
-  <div v-bind:style="{ width: width + 'px',height: height + 'px' },{height: height + 'px'}" class="div1">
+  
+  <div v-bind:style="{height: height + 'px'  ,width: width + 'px',backgroundColor: BackgroundColor }" class="full-height">
   
   </div>
 </template>
