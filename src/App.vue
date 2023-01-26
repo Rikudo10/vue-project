@@ -55,7 +55,7 @@ export default {
 </template>
 
 <style>
- .div1 {
+ .full-height {
   border: 3px solid green;
  }
 </style>
