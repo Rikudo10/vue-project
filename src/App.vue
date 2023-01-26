@@ -1,12 +1,13 @@
 <script>
 
 export default {
-  data() {
+  data(color) {
     return {
       width: 20,
       height: 30,
       simagle: null,
-      show: false
+      show: false,
+      color: null
     }
   },
   computed: {
@@ -42,20 +43,13 @@ export default {
     <p v-if="show">ფართობი: {{ calculateSpace }}</p>
     <p v-if="show">მოცულობა: {{ calculateMoculoba }}</p>
   </div>
-  
-  <label for="head">Background Color Change
-        <input type="color" id="head" name="head" v-model="BackgroundColor"
-            :style="{ backgroundColor: BackgroundColor, borderColor: BackgroundColor }">
-    </label>
+  <div v-bind:style="{ width: width + 'px' , height: height + 'px',backgroundColor:color}" class="div1"></div>
+  <input type="color" v-model="color"> 
 
-  
-  <div v-bind:style="{height: height + 'px'  ,width: width + 'px',backgroundColor: BackgroundColor }" class="full-height">
-  
-  </div>
 </template>
-
 <style>
- .full-height {
-  border: 3px solid green;
- }
+.div1 {
+  border: 3px outset cyan;
+  
+}
 </style>
