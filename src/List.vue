@@ -19,7 +19,7 @@ export default{
         </ul>
     </div>
     
-    <div id="app">
+    <div id="mydiv">
   
   <p v-if="!isHidden" v-for="item in items" :key="item.index">{{item.description}}</p>
   
