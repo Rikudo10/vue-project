@@ -31,10 +31,6 @@ export default {
         v.done = !v.done
     
     },
-    deleteFromTodoList(record){
-        let v = this.todos.find(item => item.id === record.id)
-        this.todos.splice(this.todos.indexOf(v), 1)
-    }
 
   },
   computed: {
@@ -64,9 +60,8 @@ export default {
         <h3>Active Todos</h3>
         <Todolist :changeStatus="true"
          :data="ActiveTodos" @onChangeDoneStatus="ChangeStatus($event)" />
-
         <h4>Done Todos</h4>
-        <Todolist :candelete="true" :data="DoneTodos" @onDelete="deleteFromTodoList($event)" />
+        <Todolist :candelete="true" :data="DoneTodos" />
     </div>
     <div class="divclass2">
       <input type="text" v-model="search">

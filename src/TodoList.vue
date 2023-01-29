@@ -1,5 +1,5 @@
 <script>
-import Listitemcomponent from './Listitemcomponent.vue';
+import Listitemcomponent from './components/Listitemcomponent.vue';
 export default {
     props: { 
         data: { type:Array, required:true },
@@ -14,9 +14,6 @@ export default {
             this.$emit('onChangeDoneStatus', item)
 
         },
-        deleteRecord(data){
-            this.$emit('onDelete', item)
-        }
     }
 
 }
@@ -27,8 +24,7 @@ export default {
             v-for="item in data"
              :key="item.index" :itemData="item"
                :renderCheckbox="changeStatus" 
-               :renderDeleteButton="candelete"
                @onChange="changeDoneStatus($event)"
-               @onDelete="deleteRecord($event)"/>
+                />
       </ul>
 </template>
