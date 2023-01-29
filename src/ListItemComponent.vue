@@ -1,12 +1,24 @@
 <script>
 export default {
     props: {
-        itemData: { type:Object, required: true}
+        itemData: { type:Object, required:true },
+        renderCheckbox: { type:Boolean, required:true},
+        renderDeleteBtn: {type:Boolean, required:true}
+        
+    },
+    methods: {
+        onChange(){
+            this.$emit('onChange', this.itemData)
+        },
+        onDelete(){
+            this.$emit('onDelete', this.itemData)
+        }
+        
     },
 }
 </script>
-
 <template>
-    <li><input type="checkbox" :checked="itemData.done">{{ itemData.id }} - {{ itemData.name }}</li>
-
+    <li><input v-if="renderCheckbox" type="checkbox" :checked="itemData.done" @change="onChange"> 
+        <label>{{ itemData.id }} - {{ itemData.name }}</label> </li>
+    <button v-if="renderDeleteBtn" @click="onDelete">Delete</button>
 </template>

@@ -1,17 +1,33 @@
 <script>
-import ListItemComponent from "./listitemcomponent.vue";
+import Listitemcomponent from './Listitemcomponent.vue';
 export default {
-  props: {
-    data: { type: Array, required: true },
-  },
-  components: {
-    ListItemComponent,
-  },
-};
-</script>
+    props: { 
+        data: { type:Array, required:true },
+        changeStatus: { type:Boolean, default:false},
+        candelete: {type:Boolean,default:false}
+    },
+    components: {
+        Listitemcomponent
+    },
+    methods: {
+        changeDoneStatus(item){
+            this.$emit('onChangeDoneStatus', item)
 
+        },
+        deleteRecord(data){
+            this.$emit('onDelete', item)
+        }
+    }
+
+}
+</script>
 <template>
-  <ul>
-    <ListItemComponent v-for="item in data" :key="item.index" :itemData="item" />
-  </ul>
+      <ul>
+            <Listitemcomponent v-for="item in data"
+             :key="item.index" :itemData="item"
+               :renderCheckbox="changeStatus" 
+               :renderDeleteButton="candelete"
+               @onChange="changeDoneStatus($event)"
+               @onDelete="deleteRecord($event)"/>
+      </ul>
 </template>
