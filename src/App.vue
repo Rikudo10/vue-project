@@ -33,7 +33,7 @@ export default {
     },
     deleteFromTodoList(record){
         let v = this.todos.find(item => item.id === record.id)
-        this.todos.splice(this.todos.indexOf(v),1)
+        this.todos.splice(this.todos.indexOf(v), 1)
     }
 
   },

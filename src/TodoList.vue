@@ -23,7 +23,8 @@ export default {
 </script>
 <template>
       <ul>
-            <Listitemcomponent v-for="item in data"
+            <Listitemcomponent 
+            v-for="item in data"
              :key="item.index" :itemData="item"
                :renderCheckbox="changeStatus" 
                :renderDeleteButton="candelete"
