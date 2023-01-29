@@ -56,7 +56,7 @@ export default {
 </script>
 
 <template>
-    <div class="div1">
+    <div class="divclass1">
         <Todoitemform @onSubmit="putNewItemIntoTodolist($event)"/>
         <h2>All Todo items</h2>
         <Todolist :data="todos"  />
@@ -68,7 +68,7 @@ export default {
         <h4>Done Todos</h4>
         <Todolist :candelete="true" :data="DoneTodos" @onDelete="deleteFromTodoList($event)" />
     </div>
-    <div class="div2">
+    <div class="divclass2">
       <input type="text" v-model="search">
       <div v-for="post in filteredtodos" :key="post.id">
         <post :post="post" />
@@ -77,13 +77,13 @@ export default {
 
 </template>
 <style>
-.div1{
+.divclass1{
   margin: 50px;
   padding: 50px;
   background-color: aquamarine;
   border-radius: 10px;
 }
-.div2{ 
+.divclass2{ 
   background-color: cyan;
   padding: 20px;
   border-radius: 10px;

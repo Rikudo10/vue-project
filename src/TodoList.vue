@@ -3,8 +3,8 @@ import Listitemcomponent from './Listitemcomponent.vue';
 export default {
     props: { 
         data: { type:Array, required:true },
-        changeStatus: { type:Boolean, default:false},
-        candelete: {type:Boolean,default:false}
+        changeStatus: { type:Boolean, required: false, default:false},
+        candelete: {type:Boolean, required: false, default:false}
     },
     components: {
         Listitemcomponent
