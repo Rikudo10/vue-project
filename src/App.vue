@@ -7,12 +7,12 @@ export default {
   data() {
     return {
       range: [5,10,15,20],
-      langs: [ 'ge', 'en '],
-      limit: 10,
+      limit: 4,
       lang: 'ge',
       apiUrl: "http://items.magischer.de/api/products",
       products: [],
       res: null,
+      languages: ['ge', 'en'],
     }
   },
   methods: {
@@ -20,7 +20,8 @@ export default {
       axios.get(url, {
         params: {
           limit: this.limit,
-          lang: this.lang
+          lang: this.lang,
+          langs: this.langs
         }
       }).then((response) => {
         this.res = response.data 
@@ -43,6 +44,7 @@ export default {
     this.limit = e.target.value
     this.getDataFromApiUrl()
   },
+ 
   },
   mounted(){
     this.getDataFromApiUrl()
@@ -51,6 +53,9 @@ export default {
 </script>
 
 <template>
+    <select v-model="lang" @change="getDataFromApiUrl()">
+    <option v-for="(lang, index) in languages" :key="index" :value="lang">{{ lang }}</option>
+  </select>
   <select @change="limitChange">
     <option v-for="amount in range" :key="amount.index" :value="amount">Per Page: {{ amount }}</option>
   </select>
@@ -78,5 +83,4 @@ export default {
 </div>
 </template>
 <style>
-
 </style>
