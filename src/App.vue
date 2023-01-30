@@ -16,14 +16,15 @@ export default {
     }
   },
   methods: {
-    getDataFromApiUrl(url = api.Url){
+    getDataFromApiUrl(url = this.apiUrl){
       axios.get(url, {
         params: {
           limit: this.limit,
           lang: this.lang
         }
       }).then((response) => {
-        this.res = response.data.data
+        this.res = response.data 
+        this.products = response.data.data
       })
     },
     nextPage(){
@@ -70,10 +71,10 @@ export default {
     </tbody>
   </table>
   <div>
-  <a href="#" :disabled="!res.first_page_url" @click.prevent="firstPage">First Page</a>
+  <a href="#" :disabled="!res?.first_page_url" @click.prevent="firstPage">First Page</a>
   <button :disabled="!res?.prev_page_url" @click.prevent="prevPage">Previous</button>
   <button :disabled="!res?.next_page_url" @click.prevent="nextPage">Next Page</button>
-  <a href="#" :disabled="!res.last_page_url" @click.prevent="lastPage">Last Page</a>
+  <a href="#" :disabled="!res?.last_page_url" @click.prevent="lastPage">Last Page</a>
 </div>
 </template>
 <style>
