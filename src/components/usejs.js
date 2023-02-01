@@ -9,13 +9,14 @@ export default function myProduct() {
     const products = ref([])
     const Krig = ref(null)
     const product = ref(null)
-    const langs = ref (['ge', 'en'])
+    const langs = ref ([ 'ge', 'en' ])
 
     function getProducts(url = Url) {
         axios.get(url, {
             params: {
                 limit: limit,
                 lang: lang,
+                langs: langs
             }
         }).then((res) => {
             Krig.value = res.data
