@@ -1,20 +1,22 @@
-<script>
-import myProducts from './components/usejs'
+<script setup>
+import myProduct from './components/usejs'
 
-const {   myProducts,  res, getProducts ,products } = myProducts()
-       
-        
+const { products, getProducts, Krig, product, limitChange, range } = myProduct()
+
 </script>
 
 <template>
-  
-  <table >
+
+<select @change="limitChange" >
+    <option v-for="amount in range" :key="amount.index" :value="amount">Per Page: {{ amount }}</option>
+  </select>
+
+
+  <table>
     <thead>
-      <tr>
-        <th>Product Id</th>
-        <th>Product Name</th>
-        <th>Cover Image</th>
-      </tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Details</th>
     </thead>
     <tbody>
       <tr v-for="item in products" :key="item.index">
@@ -25,11 +27,12 @@ const {   myProducts,  res, getProducts ,products } = myProducts()
     </tbody>
   </table>
   <div>
-  <a href="#" :disabled="!res?.first_page_url" @click.prevent="firstPage">First Page</a>
-  <button :disabled="!res?.prev_page_url" @click.prevent="prevPage">Previous</button>
-  <button :disabled="!res?.next_page_url" @click.prevent="nextPage">Next Page</button>
-  <a href="#" :disabled="!res?.last_page_url" @click.prevent="lastPage">Last Page</a>
-</div>
+    <button @click.prevent="getProducts(Krig.first_page_url)" :disabled="!Krig?.first_page_url">first</button>
+    <button @click.prevent="getProducts(Krig?.prev_page_url)" :disabled="!Krig?.prev_page_url">prev</button>
+    <button @click.prevent="getProducts(Krig?.next_page_url)" :disabled="!Krig?.next_page_url">next</button>
+    <button @click.prevent="getProducts(Krig.last_page_url)" :disabled="!Krig?.last_page_url">last</button>
+  </div>
+  <div>
+    {{ product }}
+  </div>
 </template>
-<style>
-</style>
