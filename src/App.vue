@@ -1,65 +1,14 @@
 <script>
-import axios from 'axios'
-export default {
-    components:{
+import myProducts from './components/usejs'
+
+const {   myProducts,  res, getProducts ,products } = myProducts()
+       
         
-    },
-  data() {
-    return {
-      range: [5,10,15,20],
-      limit: 4,
-      lang: 'ge',
-      apiUrl: "http://items.magischer.de/api/products",
-      products: [],
-      res: null,
-      languages: ['ge', 'en'],
-    }
-  },
-  methods: {
-    getDataFromApiUrl(url = this.apiUrl){
-      axios.get(url, {
-        params: {
-          limit: this.limit,
-          lang: this.lang,
-          langs: this.langs
-        }
-      }).then((response) => {
-        this.res = response.data 
-        this.products = response.data.data
-      })
-    },
-    nextPage(){
-    this.getDataFromApiUrl(this.res?.next_page_url)
-  },
-  prevPage(){
-    this.getDataFromApiUrl(this.res?.prev_page_url)
-  },
-  firstPage(){
-    this.getDataFromApiUrl(this.res?.first_page_url)
-  },
-  lastPage(){
-    this.getDataFromApiUrl(this.res?.last_page_url)
-  },
-  limitChange(e){
-    this.limit = e.target.value
-    this.getDataFromApiUrl()
-  },
- 
-  },
-  mounted(){
-    this.getDataFromApiUrl()
-  }
-  }
 </script>
 
 <template>
-    <select v-model="lang" @change="getDataFromApiUrl()">
-    <option v-for="(lang, index) in languages" :key="index" :value="lang">{{ lang }}</option>
-  </select>
-  <select @change="limitChange">
-    <option v-for="amount in range" :key="amount.index" :value="amount">Per Page: {{ amount }}</option>
-  </select>
-  <table class="table-auto" style="margin: 5px">
+  
+  <table >
     <thead>
       <tr>
         <th>Product Id</th>
