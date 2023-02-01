@@ -3,18 +3,19 @@ import {ref, onMounted} from 'vue'
 
 export default function myProduct() {
     const Url = 'http://items.magischer.de/api/products'
-    const limit = 5
+    var limit =  5 
     const range = [5,10,15,20]
     const lang ='en'
     const products = ref([])
     const Krig = ref(null)
     const product = ref(null)
+    const langs = ref (['ge', 'en'])
 
     function getProducts(url = Url) {
         axios.get(url, {
             params: {
                 limit: limit,
-                lang: lang
+                lang: lang,
             }
         }).then((res) => {
             Krig.value = res.data
@@ -29,9 +30,10 @@ export default function myProduct() {
     }
 
     function limitChange(e){
-        this.limit = e.target.value
-        this.getProducts()
+      limit = e.target.value
+       getProducts()
       }
+
 
     onMounted(function() {
         getProducts(Url)
@@ -45,6 +47,7 @@ export default function myProduct() {
         product, 
         showProduct,
         limitChange,
-        range
+        range,
+        langs,
     }
 }

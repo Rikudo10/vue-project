@@ -1,7 +1,7 @@
 <script setup>
 import myProduct from './components/usejs'
 
-const { products, getProducts, Krig, product, limitChange, range } = myProduct()
+const { products, getProducts, Krig, product, limitChange, range, langs, lang,  } = myProduct()
 
 </script>
 
@@ -11,6 +11,9 @@ const { products, getProducts, Krig, product, limitChange, range } = myProduct()
     <option v-for="amount in range" :key="amount.index" :value="amount">Per Page: {{ amount }}</option>
   </select>
 
+  <select v-model="lang" @change="getProducts" >
+    <option v-for="lang1 in langs" :key="lang1.index" :value="lang1">{{ lang1 }}</option>
+  </select>
 
   <table>
     <thead>
@@ -32,7 +35,5 @@ const { products, getProducts, Krig, product, limitChange, range } = myProduct()
     <button @click.prevent="getProducts(Krig?.next_page_url)" :disabled="!Krig?.next_page_url">next</button>
     <button @click.prevent="getProducts(Krig.last_page_url)" :disabled="!Krig?.last_page_url">last</button>
   </div>
-  <div>
-    {{ product }}
-  </div>
+
 </template>
