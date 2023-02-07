@@ -9,7 +9,7 @@ const data = computed(() => store.getters.cartList)
 </script>
 <template>
     <div class="w-full">
-        <h2 class="text-2xl font-bold">Cart Items</h2>
+        <h2 class="text-2xl font-bold">WatchList</h2>
         <ul class="w-80 space-y-2">
             <li v-for="item in data" :key="item.index" class="flex flex-row justify-between items-center">
                 <span>{{ item.name }} - {{ item.price }}</span>
