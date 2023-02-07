@@ -1,6 +1,6 @@
 <script>
 import useProducts from '../composables/useProducts'
-import ListItemComponent from '../ListItemComponent.vue'
+import VideoList from '../VideoList.vue'
 export default {
     setup(props, context){
 
@@ -31,7 +31,7 @@ export default {
 
 <template>
     <ul>
-        <ListItemComponent v-for="item in products" :key="item.index" :itemData="item" :renderCheckbox="changeStatus"
+        <VideoList v-for="item in products" :key="item.index" :itemData="item" :renderCheckbox="changeStatus"
             :renderDeleteBtn="canDelete" @onChange="changeDoneStatus($event)" @onDelete="deleteRecord($event)" @onShow="showProductDetails" />
     </ul>
 </template>

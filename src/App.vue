@@ -1,7 +1,7 @@
 <script setup>
-import ProductsList from './components/ProductsList.vue'
-import Cart from './components/Cart.vue'
-import Product from './components/Product.vue'
+import VideoList from './components/VideoList.vue'
+import watched from './components/watched.vue'
+import video from './components/video.vue'
 
 
 </script>
@@ -10,9 +10,9 @@ import Product from './components/Product.vue'
   <div class="container mx-auto text-center">
     
     <div class="flex flex-row space-x-4">
-      <ProductsList />
-      <Cart />
-      <Product />
+      <VideoList />
+      <watched />
+      <video />
     </div>
   </div>
 </template>
