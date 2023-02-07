@@ -6,6 +6,6 @@ export default {
         return state.cart
     },
     filteredPost (state) {
-        return state.products.filter(product => product.name.inclueds(state.search))
+        return state.products.filter((product) => product.name.toLowerCase().includes(state.search.toLowerCase()));
       }
 }
