@@ -13,7 +13,6 @@ const store = useStore()
 </script>
 <template>
     <div class="w-full">
-        <h2 class="text-2xl font-bold">ყველა  ვიდეო </h2>
         <ul class="w-60 space-y-2">
             <input type="text" v-model="search" @input="ChangeSearch" class="border-4 border-indigo-500/100">
             <li v-for="item in filteredPost" :key="item.index" class="flex flex-row justify-between items-center">
@@ -21,7 +20,7 @@ const store = useStore()
                 <button 
                     class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
                     @click.prevent="store.dispatch('addItemToCartAction', item.id)"
-                >Watched</button>
+                >Save</button>
             </li>
         </ul>
     </div>

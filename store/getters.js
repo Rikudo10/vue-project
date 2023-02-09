@@ -7,5 +7,8 @@ export default {
     },
     filteredPost (state) {
         return state.products.filter((product) => product.name.toLowerCase().includes(state.search.toLowerCase()));
+      },
+      carItemCount (state) {
+        return state.cart.length
       }
 }

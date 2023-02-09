@@ -1,5 +1,7 @@
+<script setup>
+import VideoList from '../components/VideoList.vue';
+</script>
+
 <template>
-    <div>
-        <h1>Home Page</h1>
-    </div>
+    <VideoList />
 </template>
