@@ -1,5 +1,6 @@
 export default function state() {
     return {
+      activeProduct: null,
         search: "",
         products: [
             { id: 1,
@@ -10,17 +11,17 @@ export default function state() {
             { id: 2,
               name: 'ერისიონი',
               url: 'https://www.youtube.com/watch?v=cX5ZulcMunk&list=RDMM8qVVavw9C7U&index=2',
-              description: 'yazbeguri',
+              description: 'Erisioni - Yazbeguri',
               cover: 'https://cdn.imedi.ge/new/V/2105/30/38/39/VURVEX1QQka5SCrp9gCxYQ/sample-20210517_230324-flv_snapshot_17-32_-2021-05-17_23-23-31.jpg'   },
             { id: 3,
               name: 'ნართები',
               url: 'https://www.youtube.com/watch?v=t2vST0nt_ns',
-              description: 'yazbeguri',
+              description: 'Nartebi - yazbeguri',
               cover: "https://i.ytimg.com/vi/t2vST0nt_ns/maxresdefault.jpg" },
             { id: 4, 
               name: 'სუხიშვილები',
               url: 'https://www.youtube.com/watch?v=2qNnJHNCYwY',
-              description: 'cdo',
+              description: 'sukhisvhili - cdo',
               cover: "https://i.ytimg.com/vi/ANwmys5SaQY/maxresdefault.jpg" },
               { id: 5, 
                 name: 'muro gagoshidze',

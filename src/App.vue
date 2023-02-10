@@ -5,9 +5,10 @@ import NavBars from './components/menus/NavBars.vue'
 
 <template>
 
-<div class="container mx-auto text-center">
+<div class="container mx-auto text-center ">
 
 <NavBars />
 <router-view />
   </div>
 </template>
+

@@ -12,4 +12,7 @@ export default {
     ChangeSearch(state, srch){
         state.search = srch;
     },
+    GET_PRODUCT_BY_ID(state, payload){
+        state.activeProduct = state.products.find(item => item.id === +payload)
+    }
 }

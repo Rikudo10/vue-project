@@ -10,5 +10,9 @@ export default {
       },
       carItemCount (state) {
         return state.cart.length
+      },
+      getactiveProduct(state){
+        return state.activeProduct
       }
+      
 }
