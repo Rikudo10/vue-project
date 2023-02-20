@@ -4,7 +4,6 @@ import NavBars from './components/menus/NavBars.vue'
 </script>
 
 <template>
-
 <div class="container mx-auto text-center ">
 
 <NavBars />
@@ -12,3 +11,9 @@ import NavBars from './components/menus/NavBars.vue'
   </div>
 </template>
 
+
+<style>
+  body {
+    background-color: black;
+  }
+</style>
