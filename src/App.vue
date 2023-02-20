@@ -1,6 +1,7 @@
 <script setup>
 import NavBars from './components/menus/NavBars.vue'
 
+
 </script>
 
 <template>

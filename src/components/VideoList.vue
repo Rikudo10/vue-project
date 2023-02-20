@@ -3,11 +3,7 @@ import { useStore } from 'vuex'
 import { computed } from 'vue'
 const filteredPost = computed(() => store.getters.filteredPost)
 
-const menu = [
-  { routeName: 'Home', title: 'მთავარი'},
-  { routeName: 'About', title: 'შენახულები'},
-  { routeName: 'help', title: 'დახმარება'},
-]
+
 const menu1 = [
   { routeName: 'music', title: 'მუსიკა'},
   { routeName: 'videogame', title: 'ვიდეო-თამაშები'},
@@ -27,10 +23,7 @@ const store = useStore()
       </RouterLink>
       </div>
       <div class="menu ">
-        
-        <RouterLink v-for="item in menu" :key="item.index" :to="{ name: item.routeName }" class="myrouter  block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">{{ item.title }}
-      </RouterLink>
-
+       
 </div>
         <ul class="myul">
             <div class="div1 p-10 grid grid-cols-4 gap-4">  
@@ -78,6 +71,8 @@ const store = useStore()
   height: 1100px;
   width: 10px;
   position: fixed;
+  color: white;
+  top: 250px;
 }
 .myrouter {
   padding: 20px;

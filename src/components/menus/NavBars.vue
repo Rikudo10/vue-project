@@ -20,6 +20,32 @@ const ChangeSearch = (e) => store.commit('ChangeSearch', e.target.value)
 
     <span class="font-semibold text-xl tracking-tight youtube"><a href="#">Youtube</a></span></svg>
 
+    <div class="hamburger-menu">
+    <input id="menu__toggle" type="checkbox" />
+    <label class="menu__btn" for="menu__toggle">
+      <span></span>
+    </label>
+
+    <ul class="menu__box">
+      <li><a class="menu__item" href="#">
+        <svg class="icons" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"></path>
+</svg>
+        მთავარი</a></li>
+      <li><a class="menu__item" href="#">
+        <svg class="icons" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+  <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z"></path>
+</svg>
+        Shorts</a></li>
+      <li><a class="menu__item" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor" class="icons1" viewBox="0 0 16 16">
+  <path d="M0 12V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm6.79-6.907A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
+</svg>
+        <span class="span1">გამოწერები</span></a></li>
+    </ul>
+  </div>
+    
   </div>
   <div class="block lg:hidden">
     <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
@@ -36,6 +62,21 @@ const ChangeSearch = (e) => store.commit('ChangeSearch', e.target.value)
 </template>
 
 <style scoped>
+.span1 {
+  font-size: 18px;
+  padding-left: 20px;
+}
+
+.icons1 {
+  color: white;
+  width: 27px;
+  transform: translate(-11px, 30px);
+}
+.icons {
+  color: white;
+  width: 27px;
+  transform: translate(-10px, 26px);
+}
 .mydiv2 {
   padding-right: 220px;
 }
@@ -62,6 +103,7 @@ const ChangeSearch = (e) => store.commit('ChangeSearch', e.target.value)
 }
 .mydiv {
   padding-left: 70px;
+  z-index: 5;
 }
 .myclass1 {
   position: fixed;
@@ -69,5 +111,77 @@ const ChangeSearch = (e) => store.commit('ChangeSearch', e.target.value)
 }
 .mtavari {
   padding-bottom: 90px;
+}
+#menu__toggle {
+  opacity: 0;
+}
+#menu__toggle:checked + .menu__btn > span {
+  transform: rotate(45deg);
+}
+#menu__toggle:checked + .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+#menu__toggle:checked + .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+  left: 0 !important;
+}
+.menu__btn {
+  position: fixed;
+  transform: translate(10px, 10px);
+  left: 30px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+}
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #616161;
+  transition-duration: .25s;
+}
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+.menu__box {
+  display: block;
+  position: fixed;
+  top: 100px;
+  left: -100%;
+  width: 160px;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  background-color: black;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+  transition-duration: .25s;
+  z-index: 1000 !important;
+}
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition-duration: .25s;
+}
+.menu__item:hover {
+  background-color: #3f40409d;
+  border-radius: 20px;
 }
 </style>
