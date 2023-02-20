@@ -21,8 +21,8 @@ const store = useStore()
 
 </script>
 <template>
-    <div class=" w-full">
-      <div class="">
+    <div class="mtavari w-full">
+      <div class="BarMenu">
         <RouterLink v-for="itemm in menu1" :key="itemm.index" :to="{ name: itemm.routeName }" class="menubar  block mt-4 lg:inline-block text-teal-200 hover:text-white mr-4">{{ itemm.title }}
       </RouterLink>
       </div>
@@ -49,6 +49,9 @@ const store = useStore()
 </template>
 
 <style scoped>
+.myul {
+  padding-top: 30px;
+}
 .menubar {
   margin-left: 50px;
   padding-left: 20px;
@@ -85,5 +88,16 @@ const store = useStore()
 }
 .myrouter:hover {
   color: red;
+}
+.BarMenu {
+  width: 100%;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  background-color: black;
+  position: fixed;
+}
+.mtavari {
+  padding-bottom: 50px;
+  height: 20px;
 }
 </style>

@@ -12,6 +12,7 @@ const ChangeSearch = (e) => store.commit('ChangeSearch', e.target.value)
 </script>
 
 <template>
+ <div class="mtavari"> 
 <nav class="myclass1 flex items-center justify-between flex-wrap bg-neutral-900	 p-6">
   <div class="flex items-center flex-shrink-0 text-white mr-6 mydiv">
   <svg xmlns="http://www.w3.org/2000/svg" width="25" height="50" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
@@ -31,7 +32,7 @@ const ChangeSearch = (e) => store.commit('ChangeSearch', e.target.value)
     </div>
   </div>
 </nav>
-
+</div>
 </template>
 
 <style scoped>
@@ -61,5 +62,12 @@ const ChangeSearch = (e) => store.commit('ChangeSearch', e.target.value)
 }
 .mydiv {
   padding-left: 70px;
+}
+.myclass1 {
+  position: fixed;
+  width: 100%;
+}
+.mtavari {
+  padding-bottom: 90px;
 }
 </style>

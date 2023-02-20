@@ -22,3 +22,8 @@ const carItemCount = computed(() => store.getters.carItemCount)
         </ul>
     </div>
 </template>
+
+<style scoped>
+
+
+</style>
