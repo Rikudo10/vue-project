@@ -55,13 +55,76 @@ const ChangeSearch = (e) => store.commit('ChangeSearch', e.target.value)
   <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto mydiv2">
     <div class="text-sm lg:flex-grow">
       <input  type="text" placeholder="ძიება" v-model="search" @input="ChangeSearch" class=" mysearch">
+      <button type="submit" class="buttonsearch absolute  p-2.5 text-sm font-medium text-white">
+                <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <span class="sr-only">Search</span>
+            </button>
     </div>
   </div>
+
+  <div class="allicons">
+    <div class="upload">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
+</svg>
+    </div>
+    <div class="messages">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+  <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
+</svg>
+    </div>
+    <div class="accounts  ">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" >
+  <path strokeLinecap="round" strokeLinejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+</svg>
+
+    </div>
+  </div>
+
 </nav>
 </div>
 </template>
 
 <style scoped>
+.accounts:hover{
+  border: 1px solid white;
+  border-radius: 10px;
+}
+.allicons {
+  display: flex;
+  gap: 30px;
+}
+.upload:hover{
+  border: 1px solid white;
+  border-radius: 10px;
+}
+.upload {
+  width: 33px !important;
+}
+.messages:hover {
+  border: 1px solid white;
+  border-radius: 10px;
+}
+.messages {
+  width: 33px !important;
+}
+.accounts {
+  width: 33px !important;
+  color: white !important;
+}
+.allicons {
+  display: flex;
+  color: white;
+}
+
+.buttonsearch {
+  margin-left: -63px;
+  height: 40px;
+  width: 64px;
+  border-radius: 0 40px 40px 0;
+  background-color: #616161;
+  border: 1px solid rgb(119, 118, 118);
+}
 .span1 {
   font-size: 18px;
   padding-left: 20px;
@@ -89,7 +152,7 @@ const ChangeSearch = (e) => store.commit('ChangeSearch', e.target.value)
   font-size: 15px;
   color: white;
   background-color: black;
-  border: 1px solid white;
+  border: 1px solid rgb(119, 118, 118);
   padding-left: 20px;
 }
 .bi{
