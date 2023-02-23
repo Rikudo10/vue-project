@@ -29,10 +29,14 @@ const store = useStore()
             <div class="div1 p-10 grid grid-cols-4 gap-4">  
                 <li v-for="item in filteredPost" :key="item.index" class="justify-between items-center">
     <!--Card 1-->
-    <div class="max-w-sm rounded overflow-hidden shadow-lg">
+    <div class="max-w-sm overflow-hidden shadow-lg">
         <a :href="item.url"><img :src="item.cover"></a> 
-      <div class="px-6 py-4">
-        <span class="title">{{ item.name }} </span>
+      <div class="cart px-6 py-4">
+        <span class="title">{{ item.title }} </span>
+      <div class="photodiv">
+        <img class="photo" :src="item.photo"> {{ item.name }}
+      </div>
+     <span class="views">{{ item.views }}</span> 
       </div>
     </div>
 </li>
@@ -42,6 +46,39 @@ const store = useStore()
 </template>
 
 <style scoped>
+.views {
+  color: white;
+}
+.cart {
+  text-align: left !important;
+}
+.px-6 {
+     padding-left: none;
+     padding-right: none;
+}
+.px-6 {
+  padding-left: none;
+  padding-right: none;
+}
+.py-4 {
+padding-top: 0;
+}
+
+.photodiv {
+  display: flex;
+  color: white;
+  gap: 10px;
+  padding-top: 10px;
+}
+.photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+.name {
+  color: white;
+  padding-right: 150px;
+}
 .myul {
   padding-top: 30px;
 }
@@ -66,6 +103,7 @@ const store = useStore()
 }
 .title {
     color: white;
+    text-align: right !important;
 }
 .menu {
   height: 1100px;
@@ -95,4 +133,5 @@ const store = useStore()
   padding-bottom: 50px;
   height: 20px;
 }
+
 </style>

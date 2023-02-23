@@ -13,6 +13,9 @@ export default {
       },
       getactiveProduct(state){
         return state.activeProduct
-      }
+      },
+     slidemenu(state){
+       return state.leftmenu
+      },
       
 }
