@@ -7,11 +7,12 @@ import uploadicon from './../icons/uploadicon.vue'
 import messagesicon from './../icons/messagesicon.vue'
 import accountsicon from './../icons/accountsicon.vue'
 import { useStore } from 'vuex'
+import { computed } from 'vue'
+
 
 const store = useStore()
 
-const menubar = store.getters['slidemenu']
-console.log('store.getters.leftMenu')
+const menubar = computed(() => store.getters.slidemenu)
 
 
 const search = ""
