@@ -1,8 +1,5 @@
 <script setup>
-import homeicon from './../icons/homeicon.vue'
 import youtubeicon from './../icons/youtubeicon.vue'
-import shortsicon from './../icons/shortsicon.vue'
-import subscribedicon from './../icons/subscribedicon.vue'
 import uploadicon from './../icons/uploadicon.vue'
 import messagesicon from './../icons/messagesicon.vue'
 import accountsicon from './../icons/accountsicon.vue'
@@ -36,13 +33,14 @@ const ChangeSearch = (e) => store.commit('ChangeSearch', e.target.value)
     </label>
 
     <ul class="menu__box">
-      <li><a class="menu__item" href="#">
-      <homeicon />მთავარი</a></li>
-      <li><a class="menu__item" href="#">
-       <shortsicon /> Shorts</a></li>
-      <li><a class="menu__item" href="#">
-       <subscribedicon /> <span class="span1">{{ menubar.title }}</span></a></li>
+      <span class="leftmenu">
+      <li class="li1" v-for="a in menubar ">
+        <component :is="a.icon" />
+        {{ a.title }}
+      </li>
+    </span>
     </ul>
+
   </div>
     
   </div>
@@ -78,6 +76,9 @@ const ChangeSearch = (e) => store.commit('ChangeSearch', e.target.value)
 </template>
 
 <style scoped>
+.li1 {
+  padding-left: 17px;
+}
 .youtubelogo {
   display: flex;
 }

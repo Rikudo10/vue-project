@@ -1,3 +1,7 @@
+import homeicon from '../src/components/icons/homeicon.vue'
+import shortsicon from '../src/components/icons/shortsicon.vue'
+import subscribedicon from '../src/components/icons/subscribedicon.vue'
+
 export default function state() {
     return {
       activeProduct: null,
@@ -5,15 +9,18 @@ export default function state() {
         leftmenu: [
           {
             id: 1,
-            title: 'მთავარი'
+            title: 'მთავარი',
+            icon: homeicon
           },
           {
             id: 2,
-            title: 'Shorts'
+            title: 'Shorts',
+            icon: shortsicon
           },
           {
             id: 2,
-            title: 'გამომწერები'
+            title: 'გამომწერები',
+            icon: subscribedicon
           }
         ],
         products: [
