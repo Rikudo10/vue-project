@@ -30,7 +30,11 @@ const store = useStore()
                 <li v-for="item in filteredPost" :key="item.index" class="justify-between items-center">
     <!--Card 1-->
     <div class="max-w-sm overflow-hidden shadow-lg">
-        <a :href="item.url"><img :src="item.cover"></a> 
+        <a :href="item.url">
+          <router-link :to="{ name: 'info', params: { id: item.id}}" >
+            <img :src="item.cover">
+                </router-link>
+              </a> 
       <div class="cart px-6 py-4">
         <span class="title">{{ item.title }} </span>
       <div class="photodiv">
