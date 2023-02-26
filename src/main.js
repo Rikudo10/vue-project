@@ -6,10 +6,6 @@ import router from './router'
 
 import './assets/main.css'
 
-
-
-
-
   createApp(App)
     .use(store)
     .use(router)

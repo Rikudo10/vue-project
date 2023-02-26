@@ -1,7 +1,7 @@
 
-import HomeIcon from '../../../vue-project/src/components/icons/HomeIcon.vue'
-import ShortsIcon from '../../../vue-project/src/components/icons/ShortsIcon.vue'
-import Subscribedicon from '../../../vue-project/src/components/icons/SubscribedIcon.vue'
+import HomeIcon from '../../../src/components/icons/HomeIcon.vue'
+import ShortsIcon from '../../../src/components/icons/ShortsIcon.vue'
+import Subscribedicon from '../../../src/components/icons/Subscribedicon.vue'
 
 const navigationModule = {
     namespaced: true,
@@ -25,6 +25,12 @@ const navigationModule = {
                 }
               ]
         }
+    },
+    getters: {
+        slidemenu(state){
+            return state.leftmenu
+        }
     }
+
 }
 export default navigationModule
