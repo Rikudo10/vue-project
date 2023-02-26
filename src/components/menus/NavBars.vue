@@ -32,11 +32,11 @@ const ChangeSearch = (e) => store.commit('ChangeSearch', e.target.value)
       <span></span>
     </label>
 
-    <ul class="menu__box">
+    <ul class="menu__box" >
       <span class="leftmenu">
-      <li class="li1" v-for="a in menubar ">
-        <component :is="a.icon" />
-        {{ a.title }}
+      <li class="li1" v-for="slider in menubar " :key="slider">
+        <component :is="{...slider.icon}" />
+        {{ slider.title }}
       </li>
     </span>
     </ul>

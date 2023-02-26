@@ -1,30 +1,56 @@
 <script setup>
 import { useStore } from 'vuex'
 import { computed } from 'vue'
-const filteredPost = computed(() => store.getters.filteredPost)
-
-
-const menu1 = [
-  { routeName: 'music', title: 'მუსიკა'},
-  { routeName: 'videogame', title: 'ვიდეო-თამაშები'},
-  { routeName: 'mix', title: 'მიქსი'},
-  { routeName: 'movie', title: 'ფილმები'},
-  { routeName: 'football', title: 'ფეხბურთი'},
-  { routeName: 'newvideo', title: 'ახალი-ვიდეოები'},
-]
 
 const store = useStore()
+const filteredPost = computed(() => store.getters.filteredPost)
+
 
 </script>
 <template>
     <div class="mtavari w-full">
-      <div class="BarMenu">
-        <RouterLink v-for="itemm in menu1" :key="itemm.index" :to="{ name: itemm.routeName }" class="menubar  block mt-4 lg:inline-block text-teal-200 hover:text-white mr-4">{{ itemm.title }}
-      </RouterLink>
+      <div>
+        <nav class="mynav bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
+  <div class="container flex flex-wrap items-center justify-between mx-auto">
+    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+      <ul class="menuul flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+        <li>
+          <a href="#" class="mya block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">ყველა</a>
+        </li>
+        <li>
+          <a href="#" class="mya block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">ანიმე</a>
+        </li>
+        <li>
+          <a href="#" class="mya block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">მუსიკა</a>
+        </li>
+        <li>
+          <a href="#" class="mya block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">სერიალები</a>
+        </li>
+        <li>
+          <a href="#" class="mya block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">ფილმები</a>
+        </li>
+        <li>
+          <a href="#" class="mya block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">მიქსები</a>
+        </li>
+        <li>
+          <a href="#" class="mya block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">თამაშები</a>
+        </li>
+        <li>
+          <a href="#" class="mya block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">ჰიპ-ჰოპი</a>
+        </li>
+        <li>
+          <a href="#" class="mya block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">ცეკვა</a>
+        </li>
+        <li>
+          <a href="#" class="mya block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">ერისიონი</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+        
       </div>
-      <div class="menu ">
-       
-</div>
         <ul class="myul">
             <div class="div1 p-10 grid grid-cols-4 gap-4">  
                 <li v-for="item in filteredPost" :key="item.index" class="justify-between items-center">
@@ -50,6 +76,23 @@ const store = useStore()
 </template>
 
 <style scoped>
+.mya:hover{
+  background-color: rgb(117, 116, 116);
+}
+.mya {
+    height: 32px;
+    border: none;
+    width: 92px;
+    background-color: #272727;
+}
+.mynav {
+  background-color: black;
+}
+.menuul {
+  padding-left: 170px;
+  background-color: black;
+  color: white;
+}
 .views {
   color: white;
 }
@@ -83,20 +126,6 @@ padding-top: 0;
   color: white;
   padding-right: 150px;
 }
-.myul {
-  padding-top: 30px;
-}
-.menubar {
-  margin-left: 50px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  color: white;
-  align-items: center;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.264);
-}
 .menubar:hover {
   color: black;
   background-color: white;
@@ -125,13 +154,6 @@ padding-top: 0;
 }
 .myrouter:hover {
   color: red;
-}
-.BarMenu {
-  width: 100%;
-  padding-bottom: 10px;
-  margin-bottom: 30px;
-  background-color: black;
-  position: fixed;
 }
 .mtavari {
   padding-bottom: 50px;
