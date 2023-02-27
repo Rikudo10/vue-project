@@ -69,13 +69,13 @@ const ChangeSearch = (e) => store.commit('products/ChangeSearch', e.target.value
 
       <div class="allicons">
         <div class="upload">
-          <uploadicon />
+          <Special-Icon3 />
         </div>
         <div class="messages">
-          <messagesicon />
+          <Special-Icon2 />
         </div>
         <div class="accounts  ">
-          <accountsicon />
+          <Special-Icon />
         </div>
       </div>
 
