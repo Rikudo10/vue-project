@@ -5,7 +5,7 @@ import { computed } from 'vue'
 
 const store = useStore()
 const filteredPost = computed(() => store.getters['products/filteredPost'])
-const categories = store.getters['categories/getCategories']
+const categories = store.getters["categories/getCategories"]
 const changeCategoryId = (id) => store.commit('products/changeCategoryId', id)
 
 </script>
