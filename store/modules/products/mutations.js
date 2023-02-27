@@ -14,5 +14,8 @@ export default {
     },
     GET_PRODUCT_BY_ID(state, payload){
         state.activeProduct = state.products.find(item => item.id === +payload)
+    },
+    changeCategoryId(state, id){
+        state.categoryId = id
     }
 }

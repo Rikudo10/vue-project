@@ -13,7 +13,7 @@ const menubar = computed(() => store.getters['sidebar/slidemenu'])
 
 
 const search = ""
-const ChangeSearch = (e) => store.commit('ChangeSearch', e.target.value)
+const ChangeSearch = (e) => store.commit('products/ChangeSearch', e.target.value)
 
 </script>
 
