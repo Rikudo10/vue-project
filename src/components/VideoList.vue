@@ -3,6 +3,7 @@ import Video from './Video.vue';
 import { useStore } from 'vuex'
 import { computed } from 'vue'
 
+
 const store = useStore()
 const filteredPost = computed(() => store.getters['products/filteredPost'])
 const categories = store.getters["categories/getCategories"]
